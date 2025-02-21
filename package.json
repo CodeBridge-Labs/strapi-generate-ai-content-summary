@@ -1,6 +1,6 @@
 {
   "name": "generate-ai-content-summary",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "takes content object from scoped content-types to generate a summary of 35 words made by ai",
   "strapi": {
     "name": "generate-ai-content-summary",
