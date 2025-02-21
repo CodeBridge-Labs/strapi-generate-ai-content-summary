@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/generate-ai-content-summary",
+  "name": "@codebridgelabs/generate-ai-content-summary",
   "version": "1.0.0",
   "description": "takes content object from scoped content-types to generate a summary of 35 words made by ai",
   "strapi": {
