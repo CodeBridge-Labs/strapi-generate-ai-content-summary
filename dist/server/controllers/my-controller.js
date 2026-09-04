@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const controller = ({ strapi }) => ({
     async index(ctx) {
         ctx.body = await strapi
@@ -9,4 +7,4 @@ const controller = ({ strapi }) => ({
             .getAIGeneratedContent(ctx.request.body.text);
     },
 });
-exports.default = controller;
+export default controller;

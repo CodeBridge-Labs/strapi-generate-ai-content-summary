@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ({ strapi }) => {
+export default ({ strapi }) => {
     strapi.customFields.register({
         name: 'ai-content-summary',
         pluginId: 'generate-ai-content-summary',

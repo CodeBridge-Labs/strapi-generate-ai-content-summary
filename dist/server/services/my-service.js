@@ -1,10 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const openai_1 = require("@langchain/openai");
-const output_parsers_1 = require("@langchain/core/output_parsers");
-const prompts_1 = require("@langchain/core/prompts");
+import { ChatOpenAI } from "@langchain/openai";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+import { PromptTemplate } from "@langchain/core/prompts";
 const getOpenAIInstance = () => {
-    return new openai_1.ChatOpenAI({
+    return new ChatOpenAI({
         modelName: "gpt-4o",
         streaming: false
     });
@@ -18,14 +16,14 @@ const service = ({ strapi }) => ({
       text: {text}
       answer: \`
       `;
-        const prompt = prompts_1.PromptTemplate.fromTemplate(template);
+        const prompt = PromptTemplate.fromTemplate(template);
         const chain = prompt
             .pipe(llm)
-            .pipe(new output_parsers_1.StringOutputParser());
+            .pipe(new StringOutputParser());
         const response = await chain.invoke({
             text: text
         });
         return { data: response };
     }
 });
-exports.default = service;
+export default service;
